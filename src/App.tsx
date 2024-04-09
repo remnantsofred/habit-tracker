@@ -2,9 +2,28 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Milestone from './components/Milestone'
+export interface IMilestone {
+  name: string;
+  date: number;
+}
 
-function App() {
-  const [count, setCount] = useState(0)
+export function App() {
+  const [count, setCount] = useState(0);
+  const dummyMilestones:IMilestone[] = [
+    { name: 'ankle surgery',
+      date: 1709244000,
+    },
+    { name: '6 weeks post-op',
+      date: 1712818800,
+    },
+    { name: '12 weeks post-op',
+      date: 1716447600,
+    },
+    { name: 'Dr. Morshed follow-up appointment',
+      date: 1713301200,
+    }
+  ];
 
   return (
     <>
@@ -28,8 +47,19 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div>
+        <ul>
+          { dummyMilestones.map((milestone)=> 
+            { return (<Milestone
+                        milestone={ milestone }
+                      />
+            )}
+          )}
+        </ul>
+      </div>
     </>
   )
 }
 
 export default App
+
