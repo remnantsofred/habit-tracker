@@ -12,16 +12,16 @@ export function App() {
   const [count, setCount] = useState(0);
   const dummyMilestones:IMilestone[] = [
     { name: 'ankle surgery',
-      date: 1709244000,
+      date: 1709244000000,
     },
     { name: '6 weeks post-op',
-      date: 1712818800,
+      date: 1712818800000,
     },
     { name: '12 weeks post-op',
-      date: 1716447600,
+      date: 1716447600000,
     },
     { name: 'Dr. Morshed follow-up appointment',
-      date: 1713301200,
+      date: 1713301200000,
     }
   ];
 
@@ -45,7 +45,6 @@ export function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
       </p>
       <div>
         <ul>
