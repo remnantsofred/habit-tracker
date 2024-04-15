@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { IMilestone } from "../App";
 import './Milestone.css'
+import { breakDownSeconds } from "../utils/date";
 
 interface IProps {
   milestone: IMilestone
@@ -27,17 +28,20 @@ function Milestone (props: IProps) {
 
     const diff = Math.floor(laterDate - earlierDate);
     const totalSeconds = Math.floor(diff / 1000);
-    const totalMinutes = Math.floor(totalSeconds / 60);
-    const totalHours = Math.floor(totalMinutes / 60);
-    const totalDays = Math.floor(totalHours / 24);
-    const totalWeeks = Math.floor(totalDays / 7);
-    setSeconds(totalSeconds);
-    setMinutes(totalMinutes);
-    setHours(totalHours);
-    setDays(totalDays);
-    setWeeks(totalWeeks);
-    // return totalSeconds;
-    // return [ totalWeeks, totalDays, totalHours, totalMinutes, totalSeconds ]
+    // const totalMinutes = Math.floor(totalSeconds / 60);
+    // const totalHours = Math.floor(totalMinutes / 60);
+    // const totalDays = Math.floor(totalHours / 24);
+    // const totalWeeks = Math.floor(totalDays / 7);
+
+    const results = breakDownSeconds(totalSeconds)
+    console.log('results', results)
+    console.log('results seconds left', results['secondsLeft'])
+
+    setSeconds(results['secondsLeft']);
+    setMinutes(results['minutes']);
+    setHours(results['hours']);
+    setDays(results['days']);
+    setWeeks(results['weeks']);
   }
 
   return (
