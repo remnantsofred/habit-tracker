@@ -53,7 +53,7 @@ function Milestone (props: IProps) {
         <span>
         in
         </span>}
-      <span className="row">
+      <span className="milestone-details">
         { weeks > 0 && 
           <span>
             { weeks } weeks
