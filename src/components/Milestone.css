@@ -3,3 +3,9 @@
   margin: 24px;
   gap: 0.5rem;
 }
+
+.row {
+  column-gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+}

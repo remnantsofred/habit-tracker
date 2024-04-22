@@ -20,8 +20,14 @@ export function App() {
     { name: '12 weeks post-op',
       date: 1716447600000,
     },
-    { name: 'Dr. Morshed follow-up appointment',
+    { name: 'Dr. Morshed follow-up appointment 6-weeks post-op',
       date: 1713301200000,
+    },
+    { name: 'Dr. Morshed follow-up appointment 12-weeks post-op',
+      date: 1716330600000,
+    },
+    { name: 'next PT appointment',
+      date: 1714167000000,
     }
   ];
 
