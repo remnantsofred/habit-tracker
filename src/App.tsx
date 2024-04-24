@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Milestone from './components/Milestone'
+import Countdown from './components/Countdown/Countdown'
 export interface IMilestone {
   name: string;
   date: number;
@@ -42,6 +43,7 @@ export function App() {
         </a>
       </div>
       <h1 className='main-h1'>Ankle Progress</h1>
+      <Countdown />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
