@@ -18,14 +18,12 @@ const getTimeLeft = (date) => {
   const hours = Math.floor(totalTimeLeft / (1000 * 60 * 60) % 24);
   const minutes = Math.floor(totalTimeLeft / (1000 * 60) % 60);
   const seconds = Math.floor(totalTimeLeft / (1000) % 60);
-  return [status, {'weeks': weeks, 'days': days, 'hours': hours, 'minutes': minutes, 'seconds': seconds} ]
+  return [status, {weeks, days, hours, minutes, seconds} ]
 }
 
 
 const Countdown = ({milestone}) => {
-  const [timeLeft, setTimeLeft] = useState(()=> getTimeLeft());
-  const [status, setStatus] = useState('');
-  
+  const [timeLeft, setTimeLeft] = useState(()=> getTimeLeft());  
   
   useEffect(() => {
     const timer = setInterval(() => {
@@ -39,7 +37,7 @@ const Countdown = ({milestone}) => {
   return (
     <div className="countdown">
       {timeLeft[0] === 'future' && <h2>Countdown until {milestone.name}</h2>}
-      {timeLeft[0] === 'past' && <h2>Countdown since {milestone.name}</h2>}
+      {timeLeft[0] === 'past' && <h2>Time since {milestone.name}</h2>}
       <div className="content">
         {Object.entries(timeLeft[1]).map(el => {
           const label = el[0];
