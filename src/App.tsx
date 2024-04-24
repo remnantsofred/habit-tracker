@@ -43,7 +43,7 @@ export function App() {
         </a>
       </div>
       <h1 className='main-h1'>Ankle Progress</h1>
-      <Countdown />
+      {/* <Countdown /> */}
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -56,9 +56,10 @@ export function App() {
       </p>
       <div>
         <ul>
-          { dummyMilestones.map((milestone)=> 
-            { return (<Milestone
+          { dummyMilestones.map((milestone, idx)=> 
+            { return (<Countdown
                         milestone={ milestone }
+                        key={idx}
                       />
             )}
           )}

@@ -34,8 +34,6 @@ function Milestone (props: IProps) {
     // const totalWeeks = Math.floor(totalDays / 7);
 
     const results = breakDownSeconds(totalSeconds)
-    console.log('results', results)
-    console.log('results seconds left', results['secondsLeft'])
 
     setSeconds(results['secondsLeft']);
     setMinutes(results['minutes']);

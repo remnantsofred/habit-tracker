@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: center;
   height: 200px;
-  max-width: 150px;
+  max-width: 200px;
   color: white;
 }
 
@@ -31,13 +31,13 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   position: relative;
   box-shadow: -2px 0px 5px 1px #232423ad;
 }
-/* 
-@media screen and (min-width: 550px) {
+
+/* @media screen and (min-width: 790px) {
   .countdown .value{
     font-size: 100px;
     height: 200px;
@@ -67,4 +67,11 @@
   height: 20px;
   background-color: #969696;
   box-shadow: inset -1px 1px 5px 1px #0e0e0ead;
+}
+
+.countdown .label {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  margin-top: 10px;
 }

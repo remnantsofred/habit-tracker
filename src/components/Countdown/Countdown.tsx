@@ -1,10 +1,10 @@
 import React, { useState, useEffect} from "react";
 import './Countdown.css'
 
-const COUNTDOWN_TARGET = new Date("2024-05-23T18:00:00");
+// const COUNTDOWN_TARGET = new Date("2024-05-23T18:00:00");
 
-const getTimeLeft = () => {
-  const totalTimeLeft = COUNTDOWN_TARGET - new Date();
+const getTimeLeft = (date) => {
+  const totalTimeLeft = date - new Date();
   const weeks = Math.floor(totalTimeLeft / (1000 * 60 * 60 * 24 * 7) % 7);
   const days = Math.floor(totalTimeLeft / (1000 * 60 * 60 * 24) % 7);
   const hours = Math.floor(totalTimeLeft / (1000 * 60 * 60) % 24);
@@ -13,12 +13,12 @@ const getTimeLeft = () => {
   return { weeks, days, hours, minutes, seconds}
 }
 
-const Countdown = () => {
+const Countdown = ({milestone}) => {
   const [timeLeft, setTimeLeft] = useState(()=> getTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
-        setTimeLeft(getTimeLeft())
+        setTimeLeft(getTimeLeft(milestone.date))
       }, 1000)
     return ()=> {
       clearInterval(timer)
@@ -27,7 +27,7 @@ const Countdown = () => {
 
   return (
     <div className="countdown">
-      <h2>Countdown until Weight Bearing</h2>
+      <h2>Countdown until {milestone.name}</h2>
       <div className="content">
         {Object.entries(timeLeft).map(el => {
           const label = el[0];
@@ -41,36 +41,6 @@ const Countdown = () => {
             </div>
           )
         })}
-        {/* <div className="box">
-          <div className="value">
-          <span>{timeLeft.weeks}</span>
-          </div>
-          <span className="label">weeks</span>
-        </div>
-        <div className="box">
-          <div className="value">
-          <span>{timeLeft.days}</span>
-          </div>
-          <span className="label">days</span>
-        </div>
-        <div className="box">
-          <div className="value">
-          <span>{timeLeft.hours}</span>
-          </div>
-          <span className="label">hours</span>
-        </div>
-        <div className="box">
-          <div className="value">
-          <span>{timeLeft.minutes}</span>
-          </div>
-          <span className="label">minutes</span>
-        </div>
-        <div className="box">
-          <div className="value">
-          <span>{timeLeft.seconds}</span>
-          </div>
-          <span className="label">seconds</span>
-        </div> */}
       </div>
       
       
