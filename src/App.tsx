@@ -1,6 +1,7 @@
 import './App.css'
 import { useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
+import Tracker from './components/Tracker/Tracker';
 import Form from './components/Form/Form'
 import MilestonesPage from './components/MilestonesPage.tsx/MilestonesPage';
 export interface IMilestone {
@@ -22,7 +23,7 @@ export function App() {
       />
       <div>
         { page === 0 && <MilestonesPage />}
-        { page === 1 && <Form />}
+        { page === 1 && <Tracker />}
         { page === 2 && <Form />}
       </div>
     </div>
