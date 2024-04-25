@@ -1,61 +1,31 @@
 import './App.css'
-import Countdown from './components/Countdown/Countdown'
+import { useState } from 'react';
+import Navbar from './components/Navbar/Navbar';
 import Form from './components/Form/Form'
+import MilestonesPage from './components/MilestonesPage.tsx/MilestonesPage';
 export interface IMilestone {
   name: string;
   date: number;
 }
 
+
+
 export function App() {
-  const dummyMilestones:IMilestone[] = [
-    { name: 'ankle surgery',
-      date: 1709244000000,
-    },
-    { name: '6 weeks post-op',
-      date: 1712818800000,
-    },
-    { name: '12 weeks post-op',
-      date: 1716447600000,
-    },
-    { name: 'Dr. Morshed follow-up appointment 6-weeks post-op',
-      date: 1713301200000,
-    },
-    { name: 'Dr. Morshed follow-up appointment 12-weeks post-op',
-      date: 1716330600000,
-    },
-    { name: 'next PT appointment',
-      date: 1714167000000,
-    }
-  ];
+  const [page, setPage] = useState(0);
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          {/* <img src={viteLogo} className="logo" alt="Vite logo" /> */}
-        </a>
-        <a href="https://react.dev" target="_blank">
-          {/* <img src={reactLogo} className="logo react" alt="React logo" /> */}
-        </a>
-      </div>
+    <div className='app-page'>
       <h1 className='main-h1'>Ankle Progress</h1>
-      <p className="read-the-docs">
-      </p>
+      <Navbar 
+        setPage={setPage}
+      />
       <div>
-        <ul>
-          { dummyMilestones.map((milestone, idx)=> 
-            { return (<Countdown
-                        milestone={ milestone }
-                        key={idx}
-                      />
-            )}
-          )}
-        </ul>
+        { page === 0 && <MilestonesPage />}
+        { page === 1 && <Form />}
+        { page === 2 && <Form />}
       </div>
-      <div className='center'>
-        <Form />
-      </div>
-    </>
+    </div>
   )
 }
 

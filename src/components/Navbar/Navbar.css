@@ -1,0 +1,19 @@
+.navbar-container {
+  border-radius: 8px;
+  background-color: #e0fbfc;
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+.navbar-item {
+  border-radius: 8px;
+  width: 33%;
+}
+
+.navbar-item:hover {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #3d5a80;
+}
