@@ -1,16 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Milestone from './components/Milestone'
 import Countdown from './components/Countdown/Countdown'
+import Form from './components/Form/Form'
 export interface IMilestone {
   name: string;
   date: number;
 }
 
 export function App() {
-  const [count, setCount] = useState(0);
   const dummyMilestones:IMilestone[] = [
     { name: 'ankle surgery',
       date: 1709244000000,
@@ -55,6 +51,9 @@ export function App() {
             )}
           )}
         </ul>
+      </div>
+      <div className='center'>
+        <Form />
       </div>
     </>
   )
