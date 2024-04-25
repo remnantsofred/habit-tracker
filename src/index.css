@@ -78,3 +78,7 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
 }
+
+.left {
+  align-items: start;
+}
