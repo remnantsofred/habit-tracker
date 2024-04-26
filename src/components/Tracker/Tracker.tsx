@@ -12,24 +12,24 @@ const Tracker = () => {
   return (
     <div className='tracker-page'>
       <h2>Tracker</h2>
-      <div className='tracker-page-header row'>
-        <div>
-          Date
-        </div>
-        <div>
-          Flexion
-        </div>
-        <div>
-          Manual
-        </div>
-        <div>
-          Scar
-        </div>
-        <div>
-          Wysa
-        </div>
-      </div>
       <ul>
+        <div className='tracker-page-header row'>
+          <div className="tracker-item-col">
+            Date
+          </div>
+          <div className="tracker-item-col">
+            Flexion
+          </div>
+          <div className="tracker-item-col">
+            Manual
+          </div>
+          <div className="tracker-item-col">
+            Scar
+          </div>
+          <div className="tracker-item-col">
+            Wysa
+          </div>
+        </div>
         { dummyData.map((item, idx) => {
           return (
             <TrackerItem item={item} key={idx}/>

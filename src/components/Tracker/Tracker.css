@@ -1,3 +1,11 @@
-.tracker-item-container {
+.tracker-item-container, .tracker-page-header {
   gap: 1em;
+}
+
+.tracker-item-col {
+  width: 100px;
+}
+
+.tracker-item {
+  width: 100%;
 }
