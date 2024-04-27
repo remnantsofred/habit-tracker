@@ -1,6 +1,9 @@
 import Countdown from "../Countdown/Countdown";
 
 const dummyMilestones:IMilestone[] = [
+  { name: 'accident',
+    date: 1707936000000,
+  },
   { name: 'ankle surgery',
     date: 1709244000000,
   },
@@ -16,8 +19,20 @@ const dummyMilestones:IMilestone[] = [
   { name: 'Dr. Morshed follow-up appointment 12-weeks post-op',
     date: 1716330600000,
   },
-  { name: 'next PT appointment',
+  { name: 'last PT appointment',
     date: 1714167000000,
+  },
+  { name: 'next PT appointment',
+    date: 1714595400000,
+  },
+  { name: 'last Tylenol',
+    date: 1713754800000,
+  },
+  { name: 'first shower since accident',
+    date: 1708538400000,
+  },
+  { name: 'last oxy',
+    date: 1709992800000,
   }
 ];
 
